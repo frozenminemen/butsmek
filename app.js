@@ -179,4 +179,4 @@ if (!userData[sender.id + msg.guild.id].lastDaily) userData[sender.id + msg.guil
 
 });
 
-bot.login("NDYwMDEzNzA2NzE4NDc4MzM2.DhD_tw.Cob7uiA1dAruyvPC4mIOcsN23yM");
+bot.login(process.env.TOKEN);
