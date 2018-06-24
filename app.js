@@ -154,7 +154,7 @@ if (!userData[sender.id + msg.guild.id].lastDaily) userData[sender.id + msg.guil
   }
 
   if(msg.content.startsWith("h!eval")) {
-    if(msg.author.id !== "429199866657243146") return;
+    if(msg.author.id !== "455634065631215636") return;
     try {
       const code = args.join(" ");
       let evaled = eval(code);
