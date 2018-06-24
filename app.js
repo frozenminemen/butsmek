@@ -77,15 +77,15 @@ if (userData[sender.id + msg.guild.id].lastDaily != moment().format('L')) {
 userData[sender.id + msg.guild.id].lastDaily = moment().format('L')
 userData[sender.id + msg.guild.id].money += 500;
 const embed = new Discord.RichEmbed()
-.setTitle('Daily Reward')
-        .setColor('AQUA')
-.setDescription('Added 500$ to your account.')
+.setTitle('Plata zilnica')
+.setColor(msg.guild.members.get(bot.user.id).displayHexColor)
+.setDescription('500$ au fost adaugati in contul tau.')
 msg.channel.send(embed)
 } else {
 const embed = new Discord.RichEmbed()
-.setTitle('Daily Reward')
-.setColor('AQUA')
-.setDescription(`You have already collected your daily reward!\n\nYou can collect your reward in ${moment().endOf('day').fromNow()}`);
+.setTitle('Plata zilnica')
+.setColor(msg.guild.members.get(bot.user.id).displayHexColor)
+.setDescription(`Ti-ai colectat deja plata zilnica!\n\nO poti colecta din nou peste ${moment().endOf('day').fromNow()}`);
 msg.channel.send(embed)
 }
   }
@@ -100,12 +100,12 @@ if (!userData[sender.id + msg.guild.id].money) userData[sender.id + msg.guild.id
 if (!userData[sender.id + msg.guild.id].lastDaily) userData[sender.id + msg.guild.id].lastDaily = 'Not Collected';
 
     const embed = new Discord.RichEmbed()
-    .setTitle('Bank')
+    .setTitle('Cont bancar')
     .setThumbnail(msg.author.displayAvatarURL)
-    .setColor('AQUA')
-    .addField('Account Holder', msg.author.username, true)
-    .addField('Account Balance', userData[sender.id + msg.guild.id].money, true)
-    .setFooter("Do not forget to take your daily bonus! h!daily")
+    .setColor(msg.guild.members.get(bot.user.id).displayHexColor)
+    .addField('Detinator', msg.author.username, true)
+    .addField('Balanta', userData[sender.id + msg.guild.id].money, true)
+    .setFooter("Nu uita sa-ti iei plata zilnica cu h!daily 😉")
     msg.channel.send(embed)
   }
   if(msg.content.startsWith("h!help")) {
